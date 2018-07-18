@@ -1,0 +1,5 @@
+.env
+/postgres/*
+!/postgres/.gitkeep
+/server/data/*
+!/server/data/.gitkeep
