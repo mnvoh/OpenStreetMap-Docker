@@ -32,7 +32,7 @@ RUN git clone git://github.com/openstreetmap/osm2pgsql.git
 WORKDIR /home/${USERNAME}/osm2pgsql
 RUN mkdir build
 WORKDIR /home/${USERNAME}/osm2pgsql/build
-RUN cmake
+RUN cmake ..
 RUN make
 
 USER root
