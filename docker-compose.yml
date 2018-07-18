@@ -4,6 +4,7 @@ services:
     image: kartoza/postgis:10.0-2.4
     volumes:
       - ./postgres:/var/lib/postgresql
+      - ./psql-conf:/etc/postgresql/10/main
     env_file: .env
     restart: unless-stopped
   server:
