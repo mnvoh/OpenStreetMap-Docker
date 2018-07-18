@@ -1,0 +1,18 @@
+version: '2'
+services:
+  postgres:
+    image: kartoza/postgis:10.0-2.4
+    volumes:
+      - ./postgres:/var/lib/postgresql
+    env_file: .env
+    restart: unless-stopped
+  server:
+    build: ./server
+    env_file: .env
+    ports:
+      - "8080:80"
+    links:
+      - "postgres"
+    volumes:
+      - ./server/data:/data
+    restart: unless-stopped
