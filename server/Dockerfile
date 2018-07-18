@@ -56,7 +56,7 @@ WORKDIR /home/${USERNAME}
 RUN git clone git://github.com/gravitystorm/openstreetmap-carto.git
 WORKDIR /home/${USERNAME}/openstreetmap-carto
 RUN carto project.mml > mapnik.xml
-RUN osm2pgsql -d ${POSTGRES_DB} --host postgres --port 5432\
+RUN osm2pgsql -H postgres -P 5432 -d ${POSTGRES_DB} \
   --username ${POSTGRES_USER} --password ${POSTGRES_PASS} --slim  -G \
   --hstore \
   --tag-transform-script /home/${USERNAME}/openstreetmap-carto/openstreetmap-carto.lua \ 
