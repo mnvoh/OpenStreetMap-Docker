@@ -17,5 +17,5 @@ services:
     links:
       - "postgres"
     volumes:
-      - ./server/data:/data
+      - ./web/data:/data
     restart: unless-stopped
