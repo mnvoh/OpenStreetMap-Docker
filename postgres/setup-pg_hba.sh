@@ -46,3 +46,5 @@ if [ -z "$REPLICATE_FROM" ]; then
 	echo "Add rule to pg_hba: replication user"
 	echo "host replication all 0.0.0.0/0 $authMethod" >> $ROOT_CONF/pg_hba.conf
 fi
+
+echo "host    $POSTGRES_DB        $POSTGRES_USER        0.0.0.0/0     trust" >> $ROOT_CONF/pg_hba.conf 
