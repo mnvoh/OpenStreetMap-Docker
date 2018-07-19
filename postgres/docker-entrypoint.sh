@@ -9,6 +9,8 @@ source /setup-conf.sh
 # Setup ssl
 source /setup-ssl.sh
 
+source /setup-database.sh
+
 # Setup pg_hba.conf
 source /setup-pg_hba.sh
 
