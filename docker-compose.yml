@@ -7,13 +7,13 @@ services:
       - ./psql-conf:/etc/postgresql/10/main
     env_file: .env
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     restart: unless-stopped
-  server:
-    build: ./server
+  web:
+    build: ./web
     env_file: .env
     ports:
-      - "8080:80"
+      - "127.0.0.1:8080:80"
     links:
       - "postgres"
     volumes:
