@@ -77,6 +77,8 @@ ADD ./renderd.conf /usr/local/etc/
 ADD ./000-default.conf /etc/apache2/sites-available/
 RUN service apache2 restart
 
+ADD wait-for-postgres.sh /
+RUN chmod a+x /wait-for-postgres.sh
 ADD ./run.sh /
 RUN chmod a+x /run.sh
 CMD ["/run.sh"]
