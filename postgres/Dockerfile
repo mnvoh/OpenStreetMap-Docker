@@ -32,7 +32,6 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD setup-conf.sh /
 ADD setup-database.sh /
 ADD setup-pg_hba.sh /
-ADD setup-replication.sh /
 ADD setup-ssl.sh /
 ADD setup-user.sh /
 ADD postgresql.conf /tmp/postgresql.conf
