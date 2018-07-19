@@ -77,7 +77,6 @@ ADD ./renderd.conf /usr/local/etc/
 ADD ./000-default.conf /etc/apache2/sites-available/
 RUN service apache2 restart
 
-USER ${USERNAME}
 ADD ./run.sh /
 RUN chmod a+x /run.sh
 CMD ["/run.sh"]
