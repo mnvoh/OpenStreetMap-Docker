@@ -4,7 +4,7 @@ services:
     image: kartoza/postgis:10.0-2.4
     volumes:
       - ./postgres:/var/lib/postgresql
-      - ./psql-conf:/etc/postgresql/10/main
+      - ./pg_hba.conf:/etc/postgresql/10/main/pg_hba.conf
     env_file: .env
     ports:
       - "127.0.0.1:5432:5432"
