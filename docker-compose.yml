@@ -17,4 +17,5 @@ services:
       - "postgres"
     volumes:
       - ./web/data:/data
+      - ./web/html:/var/www/html
     restart: unless-stopped
