@@ -2,7 +2,6 @@ FROM ubuntu:18.04
 
 ENV POSTGRES_DB ${POSTGRES_DB}
 ENV POSTGRES_USER ${POSTGRES_USER}
-ENV POSTGRES_PASS ${POSTGRES_PASS}
 ENV IMPORT_MEMORY_SIZE ${IMPORT_MEMORY_SIZE}
 ENV IMPORT_CPU_COUNT ${IMPORT_CPU_COUNT}
 ENV ALLOW_IP_RANGE 0.0.0.0/0
@@ -75,7 +74,6 @@ RUN echo "LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so" >> \
 RUN a2enconf mod_tile
 
 ADD ./renderd.conf /usr/local/etc/
-ADD ./000-default.conf /etc/apache2/sites-available/
 RUN service apache2 restart
 
 ADD wait-for-postgres.sh /
